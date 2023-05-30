@@ -1,16 +1,17 @@
 import Product from "../models/Product.js";
 import ProductStat from "../models/ProductsStat.js";
+import User from "../models/User.js";
 
 export const getProducts = async (req,res)=>{
     try{
         const products = await Product.find();
         const productWithStats = await Promise.all(
-            products.map(async (products) => {
-                const state = await ProductStat.find({
+            products.map(async (product) => {
+                const stat = await ProductStat.find({
                     productId: product._id
                 })
                 return {
-                    ...Product._doc,
+                    ...product._doc,
                     stat,
                 }
             })
@@ -19,4 +20,13 @@ export const getProducts = async (req,res)=>{
     } catch (error) {
         res.status(404).json({ message: error.message })
     }
-}
+};
+
+export const getCustomers = async(req,res) => {
+    try{
+        const customers = await User.find({ role: "user" }).select("-password");
+        res.status(200).json(customers);
+    } catch (error) {
+        res.status(404).json({ message: error.message })
+    }
+};
