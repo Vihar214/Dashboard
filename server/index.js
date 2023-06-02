@@ -15,7 +15,8 @@ import User from "./models/User.js";
 import Product from './models/Product.js';
 import ProductStat from './models/ProductsStat.js';
 import Transaction from './models/Transaction.js';
-import { dataUser , dataProduct, dataProductStat , dataTransaction } from "./data/index.js";
+import OverallStat from "./models/OverallStat.js";
+import { dataUser , dataProduct, dataProductStat , dataTransaction , dataOverallStat } from "./data/index.js";
 
 /* CONFIGURATION */
 dotenv.config();
@@ -32,7 +33,7 @@ app.use(cors());
 app.use("/client",clientRoutes);
 app.use("/general",generalRoutes);  
 app.use("/management",managementRoutes);
-app.use("sales",salesRoutes);
+app.use("/sales",salesRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;
@@ -45,5 +46,6 @@ mongoose.connect(process.env.MONGO_URL, {
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
     // Transaction.insertMany(dataTransaction);
+    // OverallStat.insertMany(dataOverallStat);
 }).catch((error) => console.log(`${error} did not connect`));
  
