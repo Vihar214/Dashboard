@@ -16,7 +16,15 @@ import Product from './models/Product.js';
 import ProductStat from './models/ProductsStat.js';
 import Transaction from './models/Transaction.js';
 import OverallStat from "./models/OverallStat.js";
-import { dataUser , dataProduct, dataProductStat , dataTransaction , dataOverallStat } from "./data/index.js";
+import AffiliateStat from './models/AffiliateStat.js';
+import { 
+    dataUser , 
+    dataProduct, 
+    dataProductStat , 
+    dataTransaction , 
+    dataOverallStat ,
+    dataAffiliateStat
+} from "./data/index.js";
 
 /* CONFIGURATION */
 dotenv.config();
@@ -42,7 +50,8 @@ mongoose.connect(process.env.MONGO_URL, {
     useUnifiedTopology: true,
 }).then(() => {
     app.listen(PORT,() => console.log(`Server Port: ${PORT}`));
-    // User.insertMany(dataUser);    
+    // User.insertMany(dataUser); 
+    // AffiliateStat.insertMany(dataAffiliateStat);   
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
     // Transaction.insertMany(dataTransaction);
