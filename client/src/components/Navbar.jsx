@@ -3,7 +3,6 @@ import {LightModeOutlined,
         DarkModeOutlined, 
         Menu as MenuIcon, 
         Search, 
-        SettingsOutlined, 
         ArrowDropDownOutlined,
     } from "@mui/icons-material";
 import FlexBetween from 'components/FlexBetween';
@@ -11,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { setMode } from 'state';
 import profileImage from "assets/profile.jpeg";
 import { AppBar, useTheme, Toolbar, IconButton, InputBase, Button, Menu, MenuItem, Box, Typography } from "@mui/material";
+import ThemeSetting from './ThemeSetting';
 
 const Navbar = ({
     user,
@@ -59,9 +59,7 @@ const Navbar = ({
                         <LightModeOutlined sx={{fontSize:"25px"}}/>
                     )}
                 </IconButton>
-                <IconButton>
-                    <SettingsOutlined sx={{fontSize:"25px"}}/>
-                </IconButton>
+                <ThemeSetting/>
 
                 <FlexBetween>
                     <Button 

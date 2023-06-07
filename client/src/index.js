@@ -7,7 +7,6 @@ import globalReducer from "state"
 import { Provider } from 'react-redux';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { api } from "state/api";
-import { getDefaultLocale } from 'react-datepicker';
 
 const store = configureStore({
   reducer: {
