@@ -8,12 +8,15 @@ import Tooltip from '@mui/material/Tooltip';
 import { SettingsOutlined } from '@mui/icons-material';
 import { themeColors } from '../theme.js';
 import { Check } from '@mui/icons-material';
+import { useDispatch } from 'react-redux';
+import { setCurrentColor } from 'state';
 
-export let currentColor = '#ff0000'; // Exported variable to hold the current color
+export let currentColor = '#ffd166';
 
 const ThemeSetting = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const dispatch = useDispatch();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -24,7 +27,8 @@ const ThemeSetting = () => {
   };
 
   const setColor = (color) => {
-    currentColor = color; // Update the exported variable
+    currentColor = color;
+    dispatch(setCurrentColor(currentColor));
   };
 
   const rowCount = Math.ceil(themeColors.length / 3);

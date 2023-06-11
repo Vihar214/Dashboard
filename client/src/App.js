@@ -1,7 +1,7 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { useMemo } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
 import Layout from "scenes/layout";
@@ -16,17 +16,43 @@ import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
+import { setCurrentColor } from "./state/index.js";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  const currentColor = useSelector((state) => state.global.currentColor);
+  const dispatch = useDispatch();
+  const theme = useMemo(() => createTheme(themeSettings(mode, currentColor)), [mode, currentColor]);
+
+  const handleColorChange = (newColor) => {
+    dispatch(setCurrentColor(newColor));
+  };
+  
+  const bgcolor = theme.palette.secondary[400];
+
   return (
     <div className="app">
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <style>{`
+            /* Customize the scrollbar color */
+            ::-webkit-scrollbar {
+              width: 8px;
+              background-color: #7a7f9d;
+            }
+
+            ::-webkit-scrollbar-thumb {
+              background-color: ${bgcolor};
+              border-radius: 4px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+              background-color: darken(${currentColor}, 10%);
+            }
+          `}</style>
           <Routes>
-            <Route element={<Layout />}>
+            <Route element={<Layout handleColorChange={handleColorChange} />}>
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<Products />} />
