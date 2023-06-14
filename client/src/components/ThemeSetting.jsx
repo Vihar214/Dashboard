@@ -11,7 +11,7 @@ import { Check } from '@mui/icons-material';
 import { useDispatch } from 'react-redux';
 import { setCurrentColor } from 'state';
 
-export let currentColor = '#ffd166';
+export let currentColor = '#42855b';
 
 const ThemeSetting = () => {
   const [anchorEl, setAnchorEl] = useState(null);

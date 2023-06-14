@@ -8,7 +8,7 @@ import {LightModeOutlined,
 import FlexBetween from 'components/FlexBetween';
 import { useDispatch } from 'react-redux';
 import { setMode } from 'state';
-import profileImage from "assets/profile.jpeg";
+import profileImage from "assets/profile.png";
 import { AppBar, useTheme, Toolbar, IconButton, InputBase, Button, Menu, MenuItem, Box, Typography } from "@mui/material";
 import ThemeSetting from './ThemeSetting';
 

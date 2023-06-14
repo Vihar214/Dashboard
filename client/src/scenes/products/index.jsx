@@ -13,7 +13,8 @@ import {
 } from "@mui/material";
 import Header from "components/Header";
 import { useGetProductsQuery } from 'state/api';
-
+import product1 from "./product1.jpg";
+import FlexBetween from 'components/FlexBetween';
 const Product = ({
   _id,
   name,
@@ -30,19 +31,33 @@ const Product = ({
   return(
     <Card
       sx={{
+        boxShadow: "2",
         backgroundImage: "none",
         backgroundColor: theme.palette.background.alt,
-        borderRadius: "0.55rem"
+        borderRadius: "1rem"
       }}
     >
       <CardContent>
-        <Typography 
-          sx={{ fontSize:14 }}
+        <Box
+            component="img"
+            alt="product"
+            src={product1}
+            height="100%"
+            width="100%"
+            borderRadius="1rem"
+            sx={{ objectFit: "cover" }}
+         />
+        <Typography
+          ml="0.3rem"
+          mt="0.5rem" 
+          sx={{ fontSize:15 }}
           color={theme.palette.secondary[700]}
           gutterBottom
         >
           {category}
         </Typography>
+        <FlexBetween>
+        <Box height="2rem" ml="0.3rem">
         <Typography 
           variant="h5"
           component="div"
@@ -50,13 +65,14 @@ const Product = ({
           {name}
         </Typography>
         <Typography 
-          sx={{ mb: "1.5 rem" }}
+          sx={{ mb: "1rem" }}
           color={theme.palette.secondary[400]}
         > 
           ₹{Number(price).toFixed(2)}
         </Typography>
-        <Rating value={rating} readOnly />
-        <Typography variant="body2">{description}</Typography>
+        </Box>
+        <Rating value={rating} readOnly/>
+        </FlexBetween>
       </CardContent>
       <CardActions>
         <Button
@@ -64,7 +80,9 @@ const Product = ({
           size="small"
           onClick={() => setIsExpanded(!isExpanded)}
         >
+          <Typography ml="-0.13rem" fontSize="12px">
           see more
+          </Typography>
         </Button>
       </CardActions>
       <Collapse
@@ -100,8 +118,8 @@ const Products = () => {
           display="grid"  
           gridTemplateColumns="repeat(4, minmax(0, 1fr))"
           justifyContent="space-between"
-          rowGap="20px"
-          columnGap="1.33%"
+          rowGap="25px"
+          columnGap="2%"
           sx = {{
             "& > div": {gridColumn: isNonMobile ? undefined: "span 4"}
           }}
