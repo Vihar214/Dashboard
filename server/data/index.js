@@ -2275,6 +2275,7 @@ export const dataAffiliateStat = [
       category: "clothing",
       rating: 1.15,
       supply: 1320,
+      img: "product1",
     },
     {
       _id: "63701d24f03239c72c00018f",
@@ -2284,6 +2285,7 @@ export const dataAffiliateStat = [
       category: "accessories",
       rating: 4.84,
       supply: 633,
+      img: "product2",
     },
     {
       _id: "63701d24f03239c72c000190",
@@ -2293,6 +2295,7 @@ export const dataAffiliateStat = [
       category: "clothing",
       rating: 1.48,
       supply: 977,
+      img: "product3",
     },
     {
       _id: "63701d24f03239c72c000191",
@@ -2302,6 +2305,7 @@ export const dataAffiliateStat = [
       category: "misc",
       rating: 1.72,
       supply: 190,
+      img: "product4",
     },
     {
       _id: "63701d24f03239867500012a",
@@ -2311,6 +2315,7 @@ export const dataAffiliateStat = [
       category: "accessories",
       rating: 4.1,
       supply: 235,
+      img: "product5",
     },
     {
       _id: "63701d24f03239867500012b",
@@ -2320,6 +2325,7 @@ export const dataAffiliateStat = [
       category: "shoes",
       rating: 1.92,
       supply: 1274,
+      img: "product6",
     },
     {
       _id: "63701d24f03239867500012c",
@@ -2329,6 +2335,7 @@ export const dataAffiliateStat = [
       category: "shoes",
       rating: 3.52,
       supply: 212,
+      img: "product7",
     },
     {
       _id: "63701d24f03239867500012d",
@@ -2338,6 +2345,7 @@ export const dataAffiliateStat = [
       category: "accessories",
       rating: 4.1,
       supply: 655,
+      img: "product8",
     },
     {
       _id: "63701d24f03239b7f7000015",
@@ -2347,6 +2355,7 @@ export const dataAffiliateStat = [
       category: "shoes",
       rating: 1.5,
       supply: 880,
+      img: "product9",
     },
     {
       _id: "63701d24f03239b7f7000016",
@@ -2356,6 +2365,7 @@ export const dataAffiliateStat = [
       category: "clothing",
       rating: 2.83,
       supply: 1101,
+      img: "product1",
     },
     {
       _id: "63701d24f03239b7f7000017",
@@ -2365,6 +2375,7 @@ export const dataAffiliateStat = [
       category: "misc",
       rating: 4.96,
       supply: 736,
+      img: "product2",
     },
     {
       _id: "63701d24f03239b7f7000018",
@@ -2374,6 +2385,7 @@ export const dataAffiliateStat = [
       category: "clothing",
       rating: 1.56,
       supply: 1026,
+      img: "product3",
     },
     {
       _id: "63701d24f0323944410002ec",
@@ -2383,6 +2395,7 @@ export const dataAffiliateStat = [
       category: "accessories",
       rating: 2.31,
       supply: 734,
+      img: "product4",
     },
     {
       _id: "63701d24f0323944410002ed",
@@ -2392,6 +2405,7 @@ export const dataAffiliateStat = [
       category: "shoes",
       rating: 4.4,
       supply: 958,
+      img: "product5",
     },
     {
       _id: "63701d24f0323944410002ee",
@@ -2401,6 +2415,7 @@ export const dataAffiliateStat = [
       category: "clothing",
       rating: 1.02,
       supply: 527,
+      img: "product6",
     },
     {
       _id: "63701d24f0323944410002ef",
@@ -2410,6 +2425,7 @@ export const dataAffiliateStat = [
       category: "accessories",
       rating: 1.73,
       supply: 520,
+      img: "product7",
     },
     {
       _id: "63701d24f03239d81e000015",
@@ -2419,6 +2435,7 @@ export const dataAffiliateStat = [
       category: "clothing",
       rating: 4,
       supply: 395,
+      img: "product8",
     },
     {
       _id: "63701d24f03239d81e000016",
@@ -2428,6 +2445,7 @@ export const dataAffiliateStat = [
       category: "misc",
       rating: 2.81,
       supply: 863,
+      img: "product9",
     },
     {
       _id: "63701d24f03239d81e000017",
@@ -2437,6 +2455,7 @@ export const dataAffiliateStat = [
       category: "shoes",
       rating: 3.25,
       supply: 704,
+      img: "product1",
     },
     {
       _id: "63701d24f03239d81e000018",
@@ -2446,6 +2465,7 @@ export const dataAffiliateStat = [
       category: "accessories",
       rating: 2.36,
       supply: 1177,
+      img: "product2",
     },
     {
       _id: "63701d24f032390a34000327",
@@ -2455,6 +2475,7 @@ export const dataAffiliateStat = [
       category: "shoes",
       rating: 1.53,
       supply: 450,
+      img: "product3",
     },
     {
       _id: "63701d24f032390a34000328",
@@ -2464,6 +2485,7 @@ export const dataAffiliateStat = [
       category: "accessories",
       rating: 2.64,
       supply: 480,
+      img: "product4",
     },
     {
       _id: "63701d24f032390a34000329",
@@ -2473,6 +2495,7 @@ export const dataAffiliateStat = [
       category: "misc",
       rating: 3.89,
       supply: 1164,
+      img: "product5",
     },
     {
       _id: "63701d24f032390a3400032a",
@@ -2482,6 +2505,7 @@ export const dataAffiliateStat = [
       category: "misc",
       rating: 3.26,
       supply: 617,
+      img: "product6",
     },
     {
       _id: "63701d24f032395b3300012a",
@@ -2491,6 +2515,7 @@ export const dataAffiliateStat = [
       category: "shoes",
       rating: 2.71,
       supply: 385,
+      img: "product7",
     },
     {
       _id: "63701d24f032395b3300012b",
@@ -2500,6 +2525,7 @@ export const dataAffiliateStat = [
       category: "clothing",
       rating: 2.54,
       supply: 314,
+      img: "product8",
     },
     {
       _id: "63701d24f032395b3300012c",
@@ -2509,6 +2535,7 @@ export const dataAffiliateStat = [
       category: "shoes",
       rating: 1.11,
       supply: 858,
+      img: "product9",
     },
     {
       _id: "63701d24f032395b3300012d",
@@ -2518,6 +2545,7 @@ export const dataAffiliateStat = [
       category: "accessories",
       rating: 4.98,
       supply: 1185,
+      img: "product1",
     },
     {
       _id: "63701d25f03239d591000327",
@@ -2527,6 +2555,7 @@ export const dataAffiliateStat = [
       category: "clothing",
       rating: 1.17,
       supply: 659,
+      img: "product2",
     },
     {
       _id: "63701d25f03239d591000328",
@@ -2536,6 +2565,7 @@ export const dataAffiliateStat = [
       category: "clothing",
       rating: 1.43,
       supply: 157,
+      img: "product3",
     },
   ];
   

@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Box,
+  Button,
   Drawer,
   IconButton,
   List,
@@ -33,18 +34,18 @@ import FlexBetween from "./FlexBetween";
 import profileImage from "assets/profile.png";
 
 const navItems = [
-  // {
-  //   text: "ECOMMERCE",
-  //   icon: null,
-  // },
+  {
+    text: "ECOMMERCE",
+    icon: null,
+  },
   {
     text: "Dashboard",
     icon: <HomeOutlined />
   },
-  // {
-  //   text: "CLIENT FACING",
-  //   icon: null,
-  // },
+  {
+    text: "CLIENT FACING",
+    icon: null,
+  },
   {
     text: "Products",
     icon: <ShoppingCartOutlined />
@@ -65,10 +66,10 @@ const navItems = [
     text: "Geography",
     icon: <PublicOutlined />
   },
-  // {
-  //   text: "SALES",
-  //   icon: null
-  // },
+  {
+    text: "SALES",
+    icon: null
+  },
   {
     text: "Overview",
     icon: <PointOfSaleOutlined />
@@ -151,7 +152,7 @@ const Sidebar = ({
               </FlexBetween>
             </Box>
             <Box 
-              mb="4rem"
+              mb="3rem"
               ml="33.33%"
               height="85px"
               width="85px"
@@ -178,7 +179,20 @@ const Sidebar = ({
                       sx={{ color: theme.palette.secondary[200] }}
                     >
                       {user.occupation} 
-                    </Typography>
+                    </Typography> 
+                    <Button 
+                      variant="outlined" 
+                      sx={{
+                        textTransform: "none",
+                        borderRadius: "1rem",
+                        p : "0",
+                        mt: "0.2rem",
+                        color: theme.palette.secondary[400],
+                        borderColor: theme.palette.secondary[400]
+                      }}
+                    >
+                      <Typography fontSize="0.8rem">Edit</Typography>
+                    </Button>
                   </Box>
               </Box> 
             <List>

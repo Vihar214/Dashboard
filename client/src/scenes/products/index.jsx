@@ -13,8 +13,8 @@ import {
 } from "@mui/material";
 import Header from "components/Header";
 import { useGetProductsQuery } from 'state/api';
-import product1 from "./product1.jpg";
 import FlexBetween from 'components/FlexBetween';
+
 const Product = ({
   _id,
   name,
@@ -23,7 +23,8 @@ const Product = ({
   rating,
   category,
   supply,
-  stat
+  stat,
+  img
 }) => {
   const theme = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -41,7 +42,7 @@ const Product = ({
         <Box
             component="img"
             alt="product"
-            src={product1}
+            src={"https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80"}
             height="100%"
             width="100%"
             borderRadius="1rem"
