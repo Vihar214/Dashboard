@@ -81,10 +81,10 @@ const navItems = [
     text: "Breakdown",
     icon: <PieChartOutlined />,
   },
-  // {
-  //   text: "MANAGEMENT",
-  //   icon: null
-  // },
+  {
+    text: "MANAGEMENT",
+    icon: null,
+  },
   {
     text: "Admin",
     icon: <AdminPanelSettingsOutlined />,
