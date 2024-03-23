@@ -16,19 +16,21 @@ import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
-import Calendar from "scenes/calendar";
 import { setCurrentColor } from "./state/index.js";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
   const currentColor = useSelector((state) => state.global.currentColor);
   const dispatch = useDispatch();
-  const theme = useMemo(() => createTheme(themeSettings(mode, currentColor)), [mode, currentColor]);
+  const theme = useMemo(
+    () => createTheme(themeSettings(mode, currentColor)),
+    [mode, currentColor]
+  );
 
   const handleColorChange = (newColor) => {
     dispatch(setCurrentColor(newColor));
   };
-  
+
   const bgcolor = theme.palette.secondary[400];
 
   return (
@@ -59,7 +61,6 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/transactions" element={<Transactions />} />
-              <Route path="/calendar" element={<Calendar />} />
               <Route path="/geography" element={<Geography />} />
               <Route path="/overview" element={<Overview />} />
               <Route path="/daily" element={<Daily />} />

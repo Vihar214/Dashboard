@@ -26,7 +26,6 @@ import {
   AdminPanelSettingsOutlined,
   TrendingUpOutlined,
   PieChartOutlined,
-  EditCalendarOutlined
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -40,7 +39,7 @@ const navItems = [
   },
   {
     text: "Dashboard",
-    icon: <HomeOutlined />
+    icon: <HomeOutlined />,
   },
   {
     text: "CLIENT FACING",
@@ -48,43 +47,39 @@ const navItems = [
   },
   {
     text: "Products",
-    icon: <ShoppingCartOutlined />
+    icon: <ShoppingCartOutlined />,
   },
   {
     text: "Customers",
-    icon: <Groups2Outlined />
+    icon: <Groups2Outlined />,
   },
   {
     text: "Transactions",
-    icon: <ReceiptLongOutlined />
-  },
-  {
-    text: "calendar",
-    icon: <EditCalendarOutlined />
+    icon: <ReceiptLongOutlined />,
   },
   {
     text: "Geography",
-    icon: <PublicOutlined />
+    icon: <PublicOutlined />,
   },
   {
     text: "SALES",
-    icon: null
+    icon: null,
   },
   {
     text: "Overview",
-    icon: <PointOfSaleOutlined />
+    icon: <PointOfSaleOutlined />,
   },
   {
     text: "Daily",
-    icon: <TodayOutlined />
+    icon: <TodayOutlined />,
   },
   {
     text: "Monthly",
-    icon: <CalendarMonthOutlined />
+    icon: <CalendarMonthOutlined />,
   },
   {
     text: "Breakdown",
-    icon: <PieChartOutlined />
+    icon: <PieChartOutlined />,
   },
   // {
   //   text: "MANAGEMENT",
@@ -92,37 +87,36 @@ const navItems = [
   // },
   {
     text: "Admin",
-    icon: <AdminPanelSettingsOutlined />
+    icon: <AdminPanelSettingsOutlined />,
   },
   {
     text: "Performance",
-    icon: <TrendingUpOutlined />
+    icon: <TrendingUpOutlined />,
   },
-]
-
+];
 
 const Sidebar = ({
-    user,
-    drawerWidth,
-    isSidebarOpen,
-    setIsSidebarOpen,
-    isNonMobile,
+  user,
+  drawerWidth,
+  isSidebarOpen,
+  setIsSidebarOpen,
+  isNonMobile,
 }) => {
   const { pathname } = useLocation();
-  const [active , setActive ] = useState("");
+  const [active, setActive] = useState("");
   const navigate = useNavigate();
   const theme = useTheme();
 
-  useEffect(()=>{
+  useEffect(() => {
     setActive(pathname.substring(1));
-  },[pathname])
+  }, [pathname]);
 
   return (
     <Box component="nav">
       {isSidebarOpen && (
         <Drawer
           open={isSidebarOpen}
-          onClose={()=>setIsSidebarOpen(false)}
+          onClose={() => setIsSidebarOpen(false)}
           variant="persistent"
           anchor="left"
           sx={{
@@ -132,8 +126,8 @@ const Sidebar = ({
               backgroundColor: theme.palette.background.alt,
               boxSixing: "border-box",
               borderWidth: isNonMobile ? 0 : "2px",
-              width : drawerWidth
-            }
+              width: drawerWidth,
+            },
           }}
         >
           <Box width="100%">
@@ -145,107 +139,105 @@ const Sidebar = ({
                   </Typography>
                 </Box>
                 {!isNonMobile && (
-                  <IconButton onClick={()=> setIsSidebarOpen(!isSidebarOpen)}>
-                    <ChevronLeft/>
+                  <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+                    <ChevronLeft />
                   </IconButton>
                 )}
               </FlexBetween>
             </Box>
-            <Box 
-              mb="3rem"
-              ml="33.33%"
-              height="85px"
-              width="85px"
-            >
-                <Box
-                  component="img"
-                  alt="profile"
-                  src={profileImage}
-                  height="100%"
-                  width="100%"
-                  borderRadius="100%"
-                  sx={{ objectFit: "cover"  }}
-                />
-                  <Box textAlign="center">
-                    <Typography 
-                      fontWeight="bold" 
-                      fontSize="0.9rem" 
-                      sx={{ color: theme.palette.secondary[100] }}
-                    >
-                      {user.name}
-                    </Typography>
-                    <Typography 
-                      fontSize="0.8rem" 
-                      sx={{ color: theme.palette.secondary[200] }}
-                    >
-                      {user.occupation} 
-                    </Typography> 
-                    <Button 
-                      variant="outlined" 
-                      sx={{
-                        textTransform: "none",
-                        borderRadius: "1rem",
-                        p : "0",
-                        mt: "0.2rem",
-                        color: theme.palette.secondary[400],
-                        borderColor: theme.palette.secondary[400]
-                      }}
-                    >
-                      <Typography fontSize="0.8rem">Edit</Typography>
-                    </Button>
-                  </Box>
-              </Box> 
+            <Box mb="3rem" ml="33.33%" height="85px" width="85px">
+              <Box
+                component="img"
+                alt="profile"
+                src={profileImage}
+                height="100%"
+                width="100%"
+                borderRadius="100%"
+                sx={{ objectFit: "cover" }}
+              />
+              <Box textAlign="center">
+                <Typography
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  sx={{ color: theme.palette.secondary[100] }}
+                >
+                  {user.name}
+                </Typography>
+                <Typography
+                  fontSize="0.8rem"
+                  sx={{ color: theme.palette.secondary[200] }}
+                >
+                  {user.occupation}
+                </Typography>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    textTransform: "none",
+                    borderRadius: "1rem",
+                    p: "0",
+                    mt: "0.2rem",
+                    color: theme.palette.secondary[400],
+                    borderColor: theme.palette.secondary[400],
+                  }}
+                >
+                  <Typography fontSize="0.8rem">Edit</Typography>
+                </Button>
+              </Box>
+            </Box>
             <List>
-              {navItems.map(({ text, icon }) =>{
-                if(!icon){
+              {navItems.map(({ text, icon }) => {
+                if (!icon) {
                   return (
-                  <Typography key={text} sx={{m:"2.25rem 0 1rem 1rem"}}>
-                    {text}
-                  </Typography>
-                  )
+                    <Typography key={text} sx={{ m: "2.25rem 0 1rem 1rem" }}>
+                      {text}
+                    </Typography>
+                  );
                 }
                 const lcText = text.toLocaleLowerCase();
-                return(
+                return (
                   <ListItem key={text}>
-                    <ListItemButton onClick={()=>{
+                    <ListItemButton
+                      onClick={() => {
                         navigate(`/${lcText}`);
                         setActive(lcText);
                       }}
-                      sx = {{
-                        backgroundColor : active === lcText 
+                      sx={{
+                        backgroundColor:
+                          active === lcText
                             ? theme.palette.secondary[400]
                             : "transparent",
-                        color: active === lcText
+                        color:
+                          active === lcText
                             ? theme.palette.primary[500]
                             : theme.palette.secondary[100],
                         borderRadius: active === lcText ? "1rem" : "0",
                       }}
-
                     >
                       <ListItemIcon
                         sx={{
-                          ml:"0.3rem",
-                          color: active === lcText
-                            ? theme.palette.primary[500]
-                            : theme.palette.secondary[200],
+                          ml: "0.3rem",
+                          color:
+                            active === lcText
+                              ? theme.palette.primary[500]
+                              : theme.palette.secondary[200],
                         }}
                       >
                         {icon}
                       </ListItemIcon>
-                      <ListItemText primary={text}/>
+                      <ListItemText primary={text} />
                       {active === lcText && (
-                        <ChevronRightOutlined sx={{ml: "auto"}}/>
+                        <ChevronRightOutlined sx={{ ml: "auto" }} />
                       )}
                     </ListItemButton>
                   </ListItem>
-                )
+                );
               })}
-            </List>  
+            </List>
           </Box>
         </Drawer>
       )}
     </Box>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
